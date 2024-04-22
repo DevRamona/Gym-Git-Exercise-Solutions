@@ -1141,3 +1141,110 @@ To https://github.com/DevRamona/gitBundle4.git
  * [new branch]      main -> main
 
 ```
+
+### Exercise 2
+
+``` bash
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/footer)
+$ git status
+On branch ft/footer
+Your branch is up to date with 'origin/ft/footer'.
+
+nothing to commit, working tree clean
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/footer)
+$ git log
+commit ef2fb2e72ae4868c2dd386db4df80e614a046fbb (HEAD -> ft/footer, origin/ft/footer)
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 20:42:30 2024 +0200
+
+    Added footer content
+
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/footer)
+$
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/footer)
+$ git push 
+Everything up-to-date
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/footer)
+$ git add .
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/footer)
+$ git commit -m "Added new footer content"
+[ft/footer e3a598d] Added new footer content
+ 1 file changed, 1 insertion(+)
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/footer)
+$ git push 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 344 bytes | 344.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/DevRamona/gitStarted.git
+   ef2fb2e..e3a598d  ft/footer -> ft/footer
+
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/footer)
+o date with 'origin/main'.
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$ git checkout -b ft/squashing
+Switched to a new branch 'ft/squashing'
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/squashing)
+$ git merge --squash ft/footer
+Updating 54bbdb9..e3a598d
+Fast-forward
+Squash commit -- not updating HEAD       
+ footer.html | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)        
+ create mode 100644 footer.html
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/squashing)
+$ git commit -m "footer being squashed"  
+[ft/squashing 7e5d89f] footer being squashed
+ 1 file changed, 17 insertions(+)        
+ create mode 100644 footer.html
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/squashing)
+$ git push origin 
+fatal: The current branch ft/squashing has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+nches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/squashing)
+$ git push --set-upstream origin ft/squashing 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 583 bytes | 194.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/squashing' on GitHub by visiting:
+remote:      https://github.com/DevRamona/gitStarted/pull/new/ft/squashing
+remote:
+To https://github.com/DevRamona/gitStarted.git
+ * [new branch]      ft/squashing -> ft/squashing
+branch 'ft/squashing' set up to track 'origin/ft/squashing'.
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/squashing)
+$ git status 
+On branch ft/squashing
+Your branch is up to date with 'origin/ft/squashing'.
+
+nothing to commit, working tree clean
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/squashing)
+$ 
+```
