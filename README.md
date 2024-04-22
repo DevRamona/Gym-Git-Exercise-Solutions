@@ -148,3 +148,124 @@ To https://github.com/DevRamona/gitStarted.git
 ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (dev)
 $
 ```
+
+### Exercise 2 
+``` bash 
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (dev)
+$ git add home.html
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (dev)
+$ git stash save "home stash"
+Saved working directory and index state On dev: home stash
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (dev)
+$ git stash list 
+stash@{0}: On dev: home stash
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (dev)
+$ git add about.html
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (dev)
+$ git stash save "about stash"
+Saved working directory and index state On dev: about stash
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (dev)
+$ git stash list 
+stash@{0}: On dev: about stash
+stash@{1}: On dev: home stash
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (dev)
+$ git add home.html 
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (dev)
+$ git stash save "home1.html"
+Saved working directory and index state On dev: home1.html
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (dev)
+$ git stash list 
+stash@{0}: On dev: home1.html
+stash@{1}: On dev: about stash
+stash@{2}: On dev: home stash
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (dev)
+$ git add team.html
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (dev)
+$ git stash save "team stash"
+Saved working directory and index state On dev: team stash
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (dev)
+$ git stash list 
+stash@{0}: On dev: team stash
+stash@{1}: On dev: home1.html
+stash@{2}: On dev: about stash
+stash@{3}: On dev: home stash
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (dev)
+$ git stash pop stash@{2}
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+
+Dropped stash@{2} (1c021d4f1fbddc7b8cb045c23801b422bd812452)
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (dev)
+$ git status 
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (dev)
+$ git stash pop stash@{1}
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   home.html
+
+Dropped stash@{1} (e77744db5b22d148885bfe6fa5d430c8babfc110)
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (dev)
+$ git commit -m "Added the home and about"
+[dev 0f3d5b6] Added the home and about
+ 2 files changed, 22 insertions(+)
+ create mode 100644 about.html
+ create mode 100644 home.html
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (dev)
+$ git push --set-upstream origin dev
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 529 bytes | 176.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/DevRamona/gitStarted.git
+   3b1d35a..0f3d5b6  dev -> dev
+branch 'dev' set up to track 'origin/dev'.
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (dev)
+$ git stash pop 
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   team.html
+
+Dropped refs/stash@{0} (29cad467e24e5dbc0d837557e6e2cd0e4f21a949)
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (dev)
+$ git reset --hard
+HEAD is now at 0f3d5b6 Added the home and about
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (dev)
+$ git status
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+nothing to commit, working tree clean
