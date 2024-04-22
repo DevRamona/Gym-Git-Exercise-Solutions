@@ -269,3 +269,42 @@ On branch dev
 Your branch is up to date with 'origin/dev'.
 
 nothing to commit, working tree clean
+```
+
+
+## Bundle 2
+
+### Exercise 1
+
+```bash
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (dev)
+$ git checkout -b ft/bundle-2
+Switched to a new branch 'ft/bundle-2'
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/bundle-2)
+$ git add .
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/bundle-2)
+$ git commit -m "new changes added"
+[ft/bundle-2 98d1fa2] new changes added
+ 1 file changed, 12 insertions(+)
+ create mode 100644 services.html
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/bundle-2)
+$ git push --set-upstream origin ft/bundle-2
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 472 bytes | 472.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/bundle-2' on GitHub by visiting:
+remote:      https://github.com/DevRamona/gitStarted/pull/new/ft/bundle-2
+remote:
+To https://github.com/DevRamona/gitStarted.git
+ * [new branch]      ft/bundle-2 -> ft/bundle-2
+branch 'ft/bundle-2' set up to track 'origin/ft/bundle-2'.
+```
