@@ -765,3 +765,325 @@ To https://github.com/DevRamona/gitStarted.git
    50d9077..a83204f  ft/faq-page -> ft/faq-page
 
    ```
+
+   ### Exercise 2
+
+   ```  bash
+
+   ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/faq-page)
+$ git checkout -b ft/home-page-redesign
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/home-page-redesign)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$ git add .
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$ git commit -m "Additional pages have been added"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$ git add .
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$ git commit -m "Additional pages have been added"
+[main bd888d6] Additional pages have been added
+ 1 file changed, 1 insertion(+)
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$ git log 
+commit bd888d65e40ec601726907e0fa613e6eb3f16cad (HEAD -> main)
+commit bd888d65e40ec601726907e0fa613e6eb3f16cad (HEAD -> main)
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 19:33:21 2024 +0200
+
+    Additional pages have been added
+
+commit 0be0c323511a2d30e992dc2e679c525c5618f99f (origin/main)
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 16:38:03 2024 +0200
+
+    Additional changes within one file
+
+commit 5c724e9438e643037dceb3a5b5d254acaa8411fa
+Merge: 3b1d35a 98d1fa2
+Author: uwumukiza123 <113632531+uwumukiza123@users.noreply.github.com>
+Date:   Mon Apr 22 16:16:19 2024 +0200
+
+    Merge pull request #1 from DevRamona/ft/bundle-2
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$ git push 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 342 bytes | 171.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/DevRamona/gitStarted.git
+   0be0c32..bd888d6  main -> main
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$ git log 
+commit bd888d65e40ec601726907e0fa613e6eb3f16cad (HEAD -> main, origin/main)
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 19:33:21 2024 +0200
+
+    Additional pages have been added
+
+commit 0be0c323511a2d30e992dc2e679c525c5618f99f
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 16:38:03 2024 +0200
+
+    Additional changes within one file
+
+commit 5c724e9438e643037dceb3a5b5d254acaa8411fa
+Merge: 3b1d35a 98d1fa2
+Author: uwumukiza123 <113632531+uwumukiza123@users.noreply.github.com>
+Date:   Mon Apr 22 16:16:19 2024 +0200
+
+    Merge pull request #1 from DevRamona/ft/bundle-2
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$ git rebase main
+Current branch main is up to date.
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$ git log 
+commit bd888d65e40ec601726907e0fa613e6eb3f16cad (HEAD -> main, origin/main)
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 19:33:21 2024 +0200
+
+    Additional pages have been added
+
+commit 0be0c323511a2d30e992dc2e679c525c5618f99f
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 16:38:03 2024 +0200
+
+    Additional changes within one file
+
+commit 5c724e9438e643037dceb3a5b5d254acaa8411fa
+Merge: 3b1d35a 98d1fa2
+Author: uwumukiza123 <113632531+uwumukiza123@users.noreply.github.com>
+Date:   Mon Apr 22 16:16:19 2024 +0200
+
+    Merge pull request #1 from DevRamona/ft/bundle-2
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$ git add .
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$ git commit -m "Added a new paragraph within the home"
+[main 722bfc3] Added a new paragraph within the home
+ 1 file changed, 14 insertions(+), 8 deletions(-)
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$ git push 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 620 bytes | 620.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/DevRamona/gitStarted.git
+   bd888d6..722bfc3  main -> main
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$ git checkout ft/home-page-redesign
+Switched to branch 'ft/home-page-redesign'
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/home-page-redesign)
+$ git log
+commit a83204f45835133044631bdc379790791fe29657 (HEAD -> ft/home-page-redesign, origin/ft/faq-page, ft/faq-page)
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 17:57:42 2024 +0200
+
+    Revert "Additional page of team"
+
+    This reverts commit 48e2a6127c58337efb29c845efefba9ff0d40818.
+
+commit 50d90771a0dc3d1bc48c0b07caa861c11a15e988
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 17:49:10 2024 +0200
+
+    Created a new page for FAQ
+
+commit ca107e201c9cc1946e9636e86b3e2c0cfccf623d (origin/ft/contact-page, ft/contact-page)
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 17:43:53 2024 +0200
+
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/home-page-redesign)
+$
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/home-page-redesign)
+$ git status 
+On branch ft/home-page-redesign
+nothing to commit, working tree clean
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/home-page-redesign)
+$ git log
+commit a83204f45835133044631bdc379790791fe29657 (HEAD -> ft/home-page-redesign, origin/ft/faq-page, ft/faq-page)
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 17:57:42 2024 +0200
+
+    Revert "Additional page of team"
+
+    This reverts commit 48e2a6127c58337efb29c845efefba9ff0d40818.
+
+commit 50d90771a0dc3d1bc48c0b07caa861c11a15e988
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 17:49:10 2024 +0200
+
+    Created a new page for FAQ
+
+commit ca107e201c9cc1946e9636e86b3e2c0cfccf623d (origin/ft/contact-page, ft/contact-page)
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 17:43:53 2024 +0200
+
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/home-page-redesign)
+$ git rebase main 
+Successfully rebased and updated refs/heads/ft/home-page-redesign.
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/home-page-redesign)
+$ git log
+commit 1fc15577716c8573298a4dd14539556a9055575b (HEAD -> ft/home-page-redesign)
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 17:57:42 2024 +0200
+
+    Revert "Additional page of team"
+
+    This reverts commit 48e2a6127c58337efb29c845efefba9ff0d40818.
+
+commit ffb23cfac15767345f3a973f0d6b0e28ac5f9157
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 17:49:10 2024 +0200
+
+    Created a new page for FAQ
+
+commit 39289253702334d3d552ba737d0701ea6308ddfc
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 17:43:53 2024 +0200
+
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/home-page-redesign)
+$
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/home-page-redesign)
+$ git add .
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/home-page-redesign)
+$ git commit -m "Added a new paragraph within the home"
+[ft/home-page-redesign 2872586] Added a new paragraph within the home
+ 1 file changed, 4 insertions(+)
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/home-page-redesign)
+$ git push
+fatal: The current branch ft/home-page-redesign has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/home-page-redesign
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/home-page-redesign)
+$ git push --set-upstream origin ft/home-page-redesign
+Enumerating objects: 16, done.
+Counting objects: 100% (16/16), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (14/14), 1.76 KiB | 899.00 KiB/s, done.
+Total 14 (delta 7), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (7/7), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/home-page-redesign' on GitHub by visiting:
+remote:      https://github.com/DevRamona/gitStarted/pull/new/ft/home-page-redesign
+remote:
+To https://github.com/DevRamona/gitStarted.git
+ * [new branch]      ft/home-page-redesign -> ft/home-page-redesign
+branch 'ft/home-page-redesign' set up to track 'origin/ft/home-page-redesign'.
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/home-page-redesign)
+$ git checkout ft/faq-page 
+Switched to branch 'ft/faq-page'
+Your branch is up to date with 'origin/ft/faq-page'.
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/faq-page)
+$ git log 
+commit a83204f45835133044631bdc379790791fe29657 (HEAD -> ft/faq-page, origin/ft/faq-page)
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 17:57:42 2024 +0200
+
+    Revert "Additional page of team"
+
+    This reverts commit 48e2a6127c58337efb29c845efefba9ff0d40818.
+
+commit 50d90771a0dc3d1bc48c0b07caa861c11a15e988
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 17:49:10 2024 +0200
+
+    Created a new page for FAQ
+
+commit ca107e201c9cc1946e9636e86b3e2c0cfccf623d (origin/ft/contact-page, ft/contact-page)
+Merge branch 'main' into f/merge
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 17:43:53 2024 +0200
+
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/faq-page)
+$
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/faq-page)
+$ git checkout -b f/merge
+Switched to a new branch 'f/merge'
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (f/merge)
+$ git status
+On branch f/merge
+nothing to commit, working tree clean
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (f/merge)
+$ git merge main
+Merge made by the 'ort' strategy.
+ home.html | 23 +++++++++++++++--------
+ 1 file changed, 15 insertions(+), 8 deletions(-)
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (f/merge)
+$ git log
+commit 2b7be94f37457a37e971368c96827f567a289d0c (HEAD -> f/merge)
+Merge: a83204f 722bfc3
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 20:14:09 2024 +0200
+
+    Merge branch 'main' into f/merge
+
+commit 722bfc3c59d411b8155ac0e162ad6041d31b2ebe (origin/main, main)
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 19:58:07 2024 +0200
+
+    Added a new paragraph within the home
+
+commit bd888d65e40ec601726907e0fa613e6eb3f16cad
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 19:33:21 2024 +0200
+
+    Additional pages have been added
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (f/merge)
+ 
+ ```
+ 
