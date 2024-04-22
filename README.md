@@ -1086,4 +1086,58 @@ Date:   Mon Apr 22 19:33:21 2024 +0200
 ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (f/merge)
  
  ```
- 
+
+ ## Bundle 4 
+
+
+ ### Exercise 1 
+
+ ``` bash
+ ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$ git remote add git-copy https://github.com/DevRamona/gitBundle4.git
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$ git remote 
+git-copy
+origin
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$ git add .
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$ git commit -m "Added a new heading"
+[main 54bbdb9] Added a new heading
+ 1 file changed, 1 insertion(+)
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$ git push origin 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 343 bytes | 171.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.   
+To https://github.com/DevRamona/gitStarted.git
+   722bfc3..54bbdb9  main -> main
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$ git push git-copy
+Enumerating objects: 23, done.
+Counting objects: 100% (23/23), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (22/22), done.
+Writing objects: 100% (23/23), 3.29 KiB | 374.00 KiB/s, done.
+Total 23 (delta 10), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (10/10), done.
+To https://github.com/DevRamona/gitBundle4.git
+ * [new branch]      main -> main
+
+```
