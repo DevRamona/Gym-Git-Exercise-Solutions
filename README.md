@@ -308,3 +308,88 @@ To https://github.com/DevRamona/gitStarted.git
  * [new branch]      ft/bundle-2 -> ft/bundle-2
 branch 'ft/bundle-2' set up to track 'origin/ft/bundle-2'.
 ```
+
+### Exercise 2 
+
+``` bash
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$ git checkout -b ft/service-redesign       
+Switched to a new branch 'ft/service-redesign'
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/service-redesign)
+$ git add services.html
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/service-redesign)
+$ git commit -m "New changes added to the service page"
+[ft/service-redesign 216fdd1] New changes added to the service page
+ 1 file changed, 2 insertions(+)
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/service-redesign)
+$ git push --set-upstream origin ft/service-redesign
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+remote: Create a pull request for 'ft/service-redesign' on GitHub by visiting:
+remote:      https://github.com/DevRamona/gitStarted/pull/new/ft/service-redesign
+remote:
+To https://github.com/DevRamona/gitStarted.gremote: Create a pull request for 'ft/service-redesign' on GitHub by visiting:
+remote:      https://github.com/DevRamona/gitStarted/pull/new/ft/service-redesign       
+remote:
+To https://github.com/DevRamona/gitStarted.git
+ * [new branch]      ft/service-redesign -> ft/service-redesign
+branch 'ft/service-redesign' set up to track 'origin/ft/service-redesign'.
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/service-redesign)
+$ git checkout main 
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$ git add services.html 
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$ git commit -m "Additional changes within o
+ne file"
+[main 0be0c32] Additional changes within one file
+ 1 file changed, 2 insertions(+)
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$ git push 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads     
+Compressing objects: 100% (3/3), done.      
+Writing objects: 100% (3/3), 353 bytes | 353.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/DevRamona/gitStarted.git
+Your branch is up to date with 'origin/ft/service-redesign'.
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/service-redesign)
+Merge branch 'main' into ft/service-redesign
+$  git merge main
+Auto-merging services.html
+CONFLICT (content): Merge conflict in services.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/service-redesign|MERGING)
+$ git add services.html
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/service-redesign|MERGING)
+$ git commit
+[ft/service-redesign fd56d50] Merge branch 'main' into ft/service-redesign
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/service-redesign)
+$ git push 
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 396 bytes | 132.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/DevRamona/gitStarted.git
+   216fdd1..fd56d50  ft/service-redesign -> ft/service-redesign
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/service-redesign)
+$
+``` 
