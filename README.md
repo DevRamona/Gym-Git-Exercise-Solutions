@@ -393,3 +393,375 @@ To https://github.com/DevRamona/gitStarted.git
 ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/service-redesign)
 $
 ``` 
+
+## Bundle 3
+
+### Exercise 1
+
+```bash
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/team-page)
+$ git add team.html
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/team-page)
+$ git commit -m "Additional page of team"   
+[ft/team-page 48e2a61] Additional page of team
+ 1 file changed, 16 insertions(+)
+ create mode 100644 team.html
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/team-page)
+$ git push 
+fatal: The current branch ft/team-page has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/team-page
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/team-page)
+$ git push --set-upstream ft/team-page
+fatal: 'ft/team-page' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/team-page)
+$ git push --set-upstream origin ft/team-page
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads     
+Compressing objects: 100% (3/3), done.      
+Writing objects: 100% (3/3), 477 bytes | 238.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+To https://github.com/DevRamona/gitStarted.git
+ * [new branch]      ft/team-page -> ft/teamremote:
+To https://github.com/DevRamona/gitStarted.git
+ * [new branch]      ft/team-page -> ft/team-page
+branch 'ft/team-page' set up to track 'origin/ft/team-page'.
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/team-page)
+$ git checkout main 
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$ git checkout ft/contact-page
+error: pathspec 'ft/contact-page' did not match any file(s) known to git
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (main)
+$ git checkout -b ft/contact-page
+Switched to a new branch 'ft/contact-page'
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/contact-page)
+$ git checkout ft/team-page
+Switched to branch 'ft/team-page'
+Your branch is up to date with 'origin/ft/team-page'.
+commit 48e2a6127c58337efb29c845efefba9ff0d40818 (HEAD -> ft/team-page, origin/ft/team-page)
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 17:09:56 2024 +0200
+
+    Additional page of team
+
+commit fd56d50fc146f887de79a431086410af5afd4a70 (origin/ft/service-redesign, ft/service-redesign)
+Merge: 216fdd1 0be0c32
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 16:58:21 2024 +0200
+
+    Merge branch 'main' into ft/service-redesign
+
+
+    Merge branch 'main' into ft/service-redesign
+
+commit 0be0c323511a2d30e992dc2e679c525c5618f99f (origin/main, main, ft/contact-page)    
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 16:38:03 2024 +0200      
+
+    Additional changes within one file      
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/team-page)
+$ git checkout -b ft/contact-page
+fatal: a branch named 'ft/contact-page' already exists
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/team-page)
+$ git checkout ft/contact-page
+Switched to branch 'ft/contact-page'
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/contact-page)
+$ git cherry-pick
+usage: git cherry-pick [--edit] [-n] [-m <parent-number>] [-s] [-x] [--ff]
+                       [-S[<keyid>]] <commit>...
+   or: git cherry-pick (--continue | --skip | --abort | --quit)
+
+    --quit                end revert or cherry-pick sequence
+    --continue            resume revert or cherry-pick sequence
+    --abort               cancel revert or cherry-pick sequence
+    --skip                skip current commit and continue
+    --[no-]cleanup <mode> how to strip spaces and #comments from message
+    -n, --no-commit       don't automatically commit
+    --commit              opposite of --no-commit
+    -e, --[no-]edit       edit the commit message
+    -s, --[no-]signoff    add a Signed-off-by trailer
+    -m, --[no-]mainline <parent-number>     
+                          select mainline parent
+    --[no-]rerere-autoupdate
+                          update the index with reused conflict resolution if possible  
+    --[no-]strategy <strategy>
+                          merge strategy    
+    -X, --[no-]strategy-option <option>     
+                          option for merge strategy
+    -S, --[no-]gpg-sign[=<key-id>]
+                          GPG sign commit   
+    --[no-]allow-empty-message
+                          allow commits with empty messages
+    --[no-]keep-redundant-commits
+                          keep redundant, empty commits
+
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/contact-page)
+$
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/contact-page)
+$ git cherry pick 0be0c323511a2d30e992dc2e679c525c5618f99f
+fatal: unknown commit pick
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/contact-page)
+$ git cherry pick fd56d50fc146f887de79a431086410af5afd4a70
+fatal: unknown commit pick
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/contact-page)
+$ git cherry-pick fd56d50fc146f887de79a431086410af5afd4a70
+error: commit fd56d50fc146f887de79a431086410af5afd4a70 is a merge but no -m option was given.
+fatal: cherry-pick failed
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/contact-page)
+$ git cherry-pick fd56d50fc146f887de79a431086410af5afd4a70
+error: commit fd56d50fc146f887de79a431086410af5afd4a70 is a merge but no -m option was given.
+fatal: cherry-pick failed
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/contact-page)
+$ git log
+commit 0be0c323511a2d30e992dc2e679c525c5618f99f (HEAD -> ft/contact-page, origin/main, main)
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 16:38:03 2024 +0200
+
+    Additional changes within one file
+
+commit 5c724e9438e643037dceb3a5b5d254acaa8411fa
+Merge: 3b1d35a 98d1fa2
+Author: uwumukiza123 <113632531+uwumukiza123@users.noreply.github.com>
+Date:   Mon Apr 22 16:16:19 2024 +0200
+
+    Merge pull request #1 from DevRamona/ft/bundle-2
+
+    Added new HTML files.
+
+commit 98d1fa2819e90c5740dfcf0a4e03391dfc646712 (origin/ft/bundle-2, ft/bundle-2)
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 15:59:39 2024 +0200
+
+    new changes added
+
+commit 0f3d5b628d62fbef02e5bd5d6925a5754d7a7f11 (origin/dev, dev)
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 15:41:13 2024 +0200
+
+    Added the home and about
+
+commit 3b1d35a89fbe93c81322f0bde42f24ee23ac6a15
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 12:33:11 2024 +0200
+
+    A file has been added
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/contact-page)
+$ git checkout ft/team-page
+Switched to branch 'ft/team-page'
+Your branch is up to date with 'origin/ft/team-page'.
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/team-page)
+$ git log
+commit 48e2a6127c58337efb29c845efefba9ff0d40818 (HEAD -> ft/team-page, origin/ft/team-page)
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 17:09:56 2024 +0200
+
+    Additional page of team
+
+commit fd56d50fc146f887de79a431086410af5afd4a70 (origin/ft/service-redesign, ft/service-redesign)
+Merge: 216fdd1 0be0c32
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 16:58:21 2024 +0200
+
+    Merge branch 'main' into ft/service-redesign
+
+commit 0be0c323511a2d30e992dc2e679c525c5618f99f (origin/main, main, ft/contact-page)
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 16:38:03 2024 +0200
+
+    Additional changes within one file
+
+commit 216fdd1ab5e231fb94ecf68d14356854eb58bde3
+Author: DevRamona <r.ingabire@alustudent.com>
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/team-page)
+$ git checkout ft/contact-page
+Switched to branch 'ft/contact-page'
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/contact-page)
+$ git cherry-pick 48e2a6127c58337efb29c845efefba9ff0d40818
+[ft/contact-page 2ea66aa] Additional page of team
+ Date: Mon Apr 22 17:09:56 2024 +0200
+ 1 file changed, 16 insertions(+)
+ create mode 100644 team.html
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/contact-page)
+$ git log
+commit 2ea66aa7fb64b3a16eeaa4ab51dd773182beac39 (HEAD -> ft/contact-page)
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 17:09:56 2024 +0200
+
+    Additional page of team
+
+commit 0be0c323511a2d30e992dc2e679c525c5618f99f (origin/main, main)
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 16:38:03 2024 +0200
+
+    Additional changes within one file
+
+commit 5c724e9438e643037dceb3a5b5d254acaa8411fa
+Merge: 3b1d35a 98d1fa2
+Author: uwumukiza123 <113632531+uwumukiza123@users.noreply.github.com>
+Date:   Mon Apr 22 16:16:19 2024 +0200
+
+    Merge pull request #1 from DevRamona/ft/bundle-2
+
+    Added new HTML files.
+
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/contact-page)
+$ git add .
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/contact-page)
+$ git commit -m "Added a new file for the contact"
+[ft/contact-page ca107e2] Added a new file for the contact
+ 1 file changed, 11 insertions(+)
+ create mode 100644 contact.html
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/contact-page)
+$ git push 
+fatal: The current branch ft/contact-page has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/contact-page
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/contact-page)
+$ git push --set-upstream origin ft/contact-page
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 772 bytes | 85.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/contact-page' on GitHub by visiting:
+remote:      https://github.com/DevRamona/gitStarted/pull/new/ft/contact-page
+remote:
+To https://github.com/DevRamona/gitStarted.git
+ * [new branch]      ft/contact-page -> ft/contact-page
+branch 'ft/contact-page' set up to track 'origin/ft/contact-page'.
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/contact-page)
+$ git checkout -b ft/faq-page
+Switched to a new branch 'ft/faq-page'
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/faq-page)
+$ git add .
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/faq-page)
+$ git commit -m "Created a new page for FAQ"
+[ft/faq-page 50d9077] Created a new page for FAQ
+ 1 file changed, 11 insertions(+)
+ create mode 100644 faq.html
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/faq-page)
+$ git push 
+fatal: The current branch ft/faq-page has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/faq-page
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/faq-page)
+$ git push --set-upstream origin ft/faq-page
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 447 bytes | 223.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/faq-page' on GitHub by visiting:
+remote:      https://github.com/DevRamona/gitStarted/pull/new/ft/faq-page
+remote:
+To https://github.com/DevRamona/gitStarted.git
+ * [new branch]      ft/faq-page -> ft/faq-page
+branch 'ft/faq-page' set up to track 'origin/ft/faq-page'.
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/faq-page)
+$ git log
+commit 50d90771a0dc3d1bc48c0b07caa861c11a15e988 (HEAD -> ft/faq-page, origin/ft/faq-page)
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 17:49:10 2024 +0200
+
+    Created a new page for FAQ
+
+commit ca107e201c9cc1946e9636e86b3e2c0cfccf623d (origin/ft/contact-page, ft/contact-page)
+Author: DevRamona <r.ingabire@alustudent.com>
+Revert "Additional page of team"
+Date:   Mon Apr 22 17:43:53 2024 +0200
+
+    Added a new file for the contact
+
+commit 2ea66aa7fb64b3a16eeaa4ab51dd773182beac39
+Author: DevRamona <r.ingabire@alustudent.com>
+Date:   Mon Apr 22 17:09:56 2024 +0200
+
+    Additional page of team
+
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/faq-page)
+$ git revert fd56d50fc146f887de79a431086410af5afd4a70
+error: commit fd56d50fc146f887de79a431086410af5afd4a70 is a merge but no -m option was given.
+fatal: revert failed
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/faq-page)
+$ git revert 48e2a6127c58337efb29c845efefba9ff0d40818
+[ft/faq-page a83204f] Revert "Additional page of team"
+ 1 file changed, 16 deletions(-)
+ delete mode 100644 team.html
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/faq-page)
+$ git push 
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 280 bytes | 280.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/DevRamona/gitStarted.git
+   50d9077..a83204f  ft/faq-page -> ft/faq-page
+
+   ```
