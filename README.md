@@ -1248,3 +1248,174 @@ nothing to commit, working tree clean
 ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git_exercises (ft/squashing)
 $ 
 ```
+
+## Bundle 5
+
+### Exercise 2 
+
+```bash
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git-cafe-exercise (main)
+$ git remote 
+origin
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git-cafe-exercise (main)
+$ git remote -v
+origin  https://github.com/DevRamona/git-cafe-exercise.git (fetch)
+origin  https://github.com/DevRamona/git-cafe-exercise.git (push)
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git-cafe-exercise (main)
+$ git add .
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git-cafe-exercise (main)
+$ git commit -m "change in the second heading of the index page"
+[main fa225bb] change in the second heading of the index page
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git-cafe-exercise (main)
+$ git push 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 343 bytes | 343.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/DevRamona/git-cafe-exercise.git
+   d1d3f9c..fa225bb  main -> main
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git-cafe-exercise (main)
+$
+```
+
+###     Bundle 6
+
+## Exercise 1
+
+``` bash 
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git-cafe-exercise (main)
+$ git remote 
+origin
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git-cafe-exercise (main)
+$ git remote -v
+origin  https://github.com/DevRamona/git-cafe-exercise.git (fetch)
+origin  https://github.com/DevRamona/git-cafe-exercise.git (push)
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git-cafe-exercise (main)
+$ git add .
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git-cafe-exercise (main)
+$ git commit -m "change in the second heading of the index page"
+[main fa225bb] change in the second heading of the index page
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git-cafe-exercise (main)
+$ git push 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 343 bytes | 343.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/DevRamona/git-cafe-exercise.git
+   d1d3f9c..fa225bb  main -> main
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git-cafe-exercise (main)
+$ git checkout -b new
+Switched to a new branch 'new'
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git-cafe-exercise (new)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git-cafe-exercise (main)
+$ git checkout new
+Switched to branch 'new'
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git-cafe-exercise (new)
+$ git add menu.html
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git-cafe-exercise (new)
+$ git commit -m "Added a new page for menu"
+[new a7f963a] Added a new page for menu
+ 1 file changed, 11 insertions(+)
+ create mode 100644 menu.html
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git-cafe-exercise (new)
+$ git push --set -upstream new
+error: unknown switch `p'
+usage: git push [<options>] [<repository> [<refspec>...]]
+
+    -v, --[no-]verbose    be more verbose
+    -q, --[no-]quiet      be more quiet
+    --[no-]repo <repository>
+                          repository
+    --[no-]all            push all branches
+    --[no-]branches       alias of --all
+    --[no-]mirror         mirror all refs
+    -d, --[no-]delete     delete refs
+    --[no-]tags           push tags (can't be used with --all or --branches or --mirror)
+    -n, --[no-]dry-run    dry run
+    --[no-]porcelain      machine-readable output
+    -f, --[no-]force      force updates
+    --[no-]force-with-lease[=<refname>:<expect>]
+                          require old value of ref to be at this value
+    --[no-]force-if-includes
+                          require remote updates to be integrated locally
+    --[no-]recurse-submodules (check|on-demand|no)
+                          control recursive pushing of submodules
+    --[no-]thin           use thin pack
+    --[no-]receive-pack <receive-pack>
+                          receive pack program
+    --[no-]exec <receive-pack>
+                          receive pack program
+    -u, --[no-]set-upstream
+                          set upstream for git pull/status
+    --[no-]progress       force progress reporting
+    --[no-]prune          prune locally removed refs
+    --no-verify           bypass pre-push hook
+    --verify              opposite of --no-verify
+    --[no-]follow-tags    push missing but relevant tags
+    --[no-]signed[=(yes|no|if-asked)]
+                          GPG sign the push
+    --[no-]atomic         request atomic transaction on remote side
+    -o, --[no-]push-option <server-specific>
+                          option to transmit
+    -4, --ipv4            use IPv4 addresses only
+    -6, --ipv6            use IPv6 addresses only
+
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git-cafe-exercise (new)
+$ git push 
+fatal: The current branch new has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin new
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git-cafe-exercise (new)
+$ git push --set-upstream origin new
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 448 bytes | 224.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'new' on GitHub by visiting:
+remote:      https://github.com/DevRamona/git-cafe-exercise/pull/new/new
+remote:
+To https://github.com/DevRamona/git-cafe-exercise.git
+ * [new branch]      new -> new
+branch 'new' set up to track 'origin/new'.
+
+ingab@DESKTOP-13J8UH7 MINGW64 ~/Desktop/git-cafe-exercise (new)
+$
+```
